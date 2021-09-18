@@ -8,4 +8,47 @@
 
 
   <button class="button-2" (click)="themvao()">thêm vào</button>
+
+
+  <div *ngIf="age <= 18; then tre; else gia"></div>
+  <!-- <ng-template #tre1><h2>Bạn còn trẻ quá !</h2></ng-template> -->
+  <ng-template #tre>
+    <h2>Bạn còn trẻ quá !</h2>
+  </ng-template>
+
+  <ng-template #gia>
+    <h2>Bạn đã già rồi !</h2>
+  </ng-template>
+
+
+
+  <h1>Trái cây</h1>
+  <div *ngFor="let trai of traiCay; let i = index">
+    <li>{{ i + 1 }}. {{ trai }}</li>
+  </div>
+
+
+  <h1>Trái cây</h1>
+  <table class="table">
+    <tr>
+      <th>Thứ Tự</th>
+      <th>Tên</th>
+      <th>Giá</th>
+      <th>Đại Hạ Giá</th>
+    </tr>
+    <tr *ngFor="let trai of traiCay2; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ trai.ten }}</td>
+      <td class="right">
+        <span [ngClass]="{ 'so-am': trai.gia < 0 }">{{ trai.gia }}</span>
+      </td>
+      <td>
+        <span *ngIf="trai.haGia">Đang hạ giá !</span>
+      </td>
+    </tr>
+  </table>
+
+
+
+
 </div>

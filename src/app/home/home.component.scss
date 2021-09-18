@@ -2,9 +2,35 @@
   border: 1px solid;
   padding: 10px;
   box-shadow: 5px 10px red;
-  width: 400px;
+  // width: 400px;
 }
 
 .button-2{
   margin-left: 10px;
+}
+
+
+.table {
+  padding: 10px;
+  margin: 10px;
+}
+
+.table,
+td,
+th {
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+td,
+th {
+  min-width: 100px;
+}
+
+.right {
+  text-align: right;
+}
+
+.so-am {
+  color: red;
 }
