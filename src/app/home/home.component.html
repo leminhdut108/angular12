@@ -1,11 +1,77 @@
 <div class="test">
   <h3>Đây là component Home</h3>
-  <br />
+
+
+  <p>xin hãy nhập tên</p>
   <input type="text" [(ngModel)]="name" />
-  <h2>Chào bạn {{ name }}</h2>
+  <p>xin chào {{name}}</p>
+
+
+
+
+
+  <!-- value trong trong bien là  -->
+  <input type="text" (keyup)="onchangeName($event)" [value]="name" />
+
+  <!-- <input type="text" (keyup)="onchangeName($event)" [value]="'name'" /> -->
+
+
+
+
+
+
+
   <button (click)="resetName()">Reset tên</button>
 
-
-
   <button class="button-2" (click)="themvao()">thêm vào</button>
+
+  <h1>Trái cây</h1>
+  <!-- <table class="table">
+    <tr>
+      <th>Thứ Tự</th>
+      <th>Tên</th>
+      <th>Giá</th>
+      <th>Đại Hạ Giá</th>
+    </tr>
+    <tr *ngFor="let trai of traiCay2; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ trai.ten | lowercase }}</td>
+      <td class="right">
+        <span [ngClass]="{ 'so-am': trai.gia < 0 }">{{
+          trai.gia | currency: "VND":"symbol":"1.2"
+        }}</span>
+      </td>
+      <td>
+        <span>{{ trai.haGia | onSale | uppercase }}</span>
+      </td>
+    </tr>
+  </table> -->
+  Tỉnh / Thành Phố:
+  <select id="city" (change)="changeCity($event)">
+    <option *ngFor="let data of vietnamData" value="{{ data.city }}">
+      {{ data.city }}
+    </option>
+  </select>
+  <br />
+  Quận / Huyện:
+  <select id="district">
+    <option *ngFor="let district of districts" value="{{ district }}">
+      {{ district }}
+    </option>
+  </select>
+  <br />
+  <span>Counter = {{ counter }}</span>
+  <br />
+  <span>Counter ^ 2 = {{ counterBinhPhuong }}</span>
+
+  <br />
+
+
+  <span style="margin-right: 10px;">Nhập X</span>
+
+  <input type="text" (keyup)="onchangeX($event)" [value]="x" />
+
+  <br />
+
+  <span>X ^ 2 = {{ x_binh_thuong }}</span>
 </div>

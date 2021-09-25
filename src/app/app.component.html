@@ -1,5 +1,10 @@
-<h1>Hello World !</h1>
-<h2>Welcome to Angular 12 !</h2>
-<h2>Chúc bạn thành công !</h2>
-
-<app-home></app-home>
+<h1>Welcome to Angular 12 !</h1>
+<nav>
+  <ul>
+    <li>
+      <a routerLink="/about" routerLinkActive="active">About Component</a>
+    </li>
+    <li><a routerLink="/home" routerLinkActive="active">Home Component</a></li>
+  </ul>
+</nav>
+<router-outlet></router-outlet>
